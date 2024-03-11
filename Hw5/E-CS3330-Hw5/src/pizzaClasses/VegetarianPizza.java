@@ -5,6 +5,15 @@ public class VegetarianPizza extends AbstractPizza {
 	//Constructor
 	public VegetarianPizza() {
 		super();	
+		//sets default price
+		setPriceWithoutToppings(1.50);
+		
+		//adds default toppings
+		toppingList.add(Toppings.TOMATO);
+		toppingList.add(Toppings.CHEESE);
+		toppingList.add(Toppings.BELL_PEPPER);
+		toppingList.add(Toppings.BLACK_OLIVE);
+		toppingList.add(Toppings.MUSHROOM);
 	}
 	
 	public VegetarianPizza (VegetarianPizza pizza) {
