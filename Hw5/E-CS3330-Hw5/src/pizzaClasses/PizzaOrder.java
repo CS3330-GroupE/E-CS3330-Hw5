@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //PizzaOrder class utilizes PizzaCookingFactory and ICookingStrategy, private methods pizzaFactory, cookingStrategy, and pizzaOrderList
-public class PizzaOrder extends PizzaCookingFactory implements ICookingStrategy {
+public class PizzaOrder implements ICookingStrategy {
     private PizzaCookingFactory pizzaFactory;
     private ICookingStrategy cookingStrategy;
     private List<AbstractPizza> pizzaOrderList;
@@ -17,13 +17,11 @@ public class PizzaOrder extends PizzaCookingFactory implements ICookingStrategy 
     }
 	
     //creates pizza object - utilizes PizzaCookingFactory and PizzaType enum
-    @Override
     public AbstractPizza createPizza(PizzaType pizzaType) {
         return pizzaFactory.createPizza(pizzaType);
     }
 	
     //returns cookingStrategy to pizza
-    @Override
     public boolean cook(AbstractPizza pizza) {
         return cookingStrategy.cook(pizza);
     }
