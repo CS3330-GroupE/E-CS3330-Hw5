@@ -3,18 +3,37 @@ package pizzaClasses;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PizzaOrder{
-   
-	private PizzaCookingFactory pizzaFactory;
+public class PizzaOrder extends PizzaCookingFactory implements ICookingStrategy {
+    private PizzaCookingFactory pizzaFactory;
+    private ICookingStrategy cookingStrategy;
     private List<AbstractPizza> pizzaOrderList;
-    private ICookingStrategy cookingStrategy ;
+
+    public PizzaOrder(PizzaCookingFactory pizzaFactory, ICookingStrategy cookingStrategy) {
+        this.pizzaFactory = pizzaFactory;
+        this.cookingStrategy = cookingStrategy;
+        this.pizzaOrderList = new ArrayList<>();
+    }
+
+    @Override
+    public AbstractPizza createPizza(PizzaType pizzaType) {
+        return pizzaFactory.createPizza(pizzaType);
+    }
+
+    @Override
+    public boolean cook(AbstractPizza pizza) {
+        return cookingStrategy.cook(pizza);
+    }
+
+    public void addPizzaOrder(AbstractPizza pizza) {
+        pizzaOrderList.add(pizza);
+    }
     
-    // Constructor
+    /* Constructor (Left for comparison)
     public PizzaOrder() {
         pizzaFactory = new PizzaCookingFactory();
         pizzaOrderList = new ArrayList<>();
     }
-    
+    */
 	//method to print off the list of toppings based on given orderID
     public void printListOfToppingsByPizzaOrderID(int orderID) {
         
