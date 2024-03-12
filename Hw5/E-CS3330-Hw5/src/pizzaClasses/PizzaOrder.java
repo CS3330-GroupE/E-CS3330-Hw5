@@ -126,11 +126,46 @@ public class PizzaOrder implements ICookingStrategy {
 	}
 	
 	public boolean removeToppingFromPizza(int orderID, Toppings topping) {
-		return true;
+		
+		//looking for pizza
+		for(AbstractPizza pizza : pizzaOrderList) {
+			
+			//finds pizza based on orderID
+			if(pizza.getPizzaOrderID() == orderID) {
+				
+				List<Toppings> toppingList = pizza.getToppingList();
+				
+				for(Toppings check : pizza.getToppingList()) {
+					
+					if(check.equals(topping)) {
+						toppingList.remove(topping);
+						pizza.setToppingList(toppingList);
+						pizza.updatePizzaPrice(pizza.totalPrice);
+						
+						return true; //topping removed successfully
+					}
+				}
+				
+				return false; //topping not found
+			}
+		}
+		
+		return false; //order not found
 	}
 	
+	//returns true if it finds an uncooked pizza
+	//returns false if there is no uncooked pizza
 	public boolean isThereAnyUncookedPizza() {
-		return true;
+		
+		for(AbstractPizza pizza : pizzaOrderList) {
+			
+			if(pizza.getCookingStrategy() == null) {
+				return true; //uncooked pizza
+			}
+		}
+		
+		
+		return false; //no uncooked pizza found
 	}
 	
 //	public double checkout() throws Exception{

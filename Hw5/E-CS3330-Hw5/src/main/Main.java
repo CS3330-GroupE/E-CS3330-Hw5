@@ -34,7 +34,10 @@ public class Main {
 		 System.out.println(myPizzaTester.getToppingList());  
 		 myPizzaTester.updatePrice();
 		 	 
-		 System.out.println(myPizzaTester.toString());	 
+		 System.out.println(myPizzaTester.toString());
+		 
+		 
+		 
 		
 	}
 }
