@@ -10,6 +10,8 @@ public class Main {
 		// TODO
 		
 		//instantiate pizza object
+		
+		
 		MargheritaPizza myPizzaTester = new MargheritaPizza();
 		
 		//displays marg pizza without toppings cost
