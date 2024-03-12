@@ -12,7 +12,7 @@ public class HawaiianPizza extends AbstractPizza {
 			//adds default toppings
 			toppingList.add(Toppings.CANADIAN_BACON);
 			toppingList.add(Toppings.CHEESE);
-			toppingList.add(Toppings. PINEAPPLE);
+			toppingList.add(Toppings.PINEAPPLE);
 			
 			//calls method to add topping prices
 			setTotalPrice(addToppingsToPrice(priceWithoutToppings));

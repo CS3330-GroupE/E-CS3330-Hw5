@@ -2,11 +2,11 @@ package pizzaClasses;
 
 public class PizzaOrder {
 	
-	pizzaFactory(PizzaCookingFactory)
+	//private void pizzaFactory(PizzaCookingFactory);
 	
-	cookingStrategy(ICookingStrategy)
+	//private void cookingStrategy(ICookingStrategy);
 	
-	pizzaOrderList(List<AbstractPizza>)
+//	private void pizzaOrderList(List<AbstractPizza>);
 	
 	public void printListOfToppingsByPizzaOrderID(int orderID){
 		
@@ -16,9 +16,9 @@ public class PizzaOrder {
 		
 	}
 	
-	public AbstractPizza getPizzaByOrderID(int orderID) {
-		return AbstractPizza;
-	}
+//	public AbstractPizza getPizzaByOrderID(int orderID) {
+//		return AbstractPizza;
+//	}
 	
 	public boolean addPizzaToCart(PizzaType pizzaType) {
 		return true;
@@ -36,9 +36,9 @@ public class PizzaOrder {
 		return true;
 	}
 	
-	public double checkout() throws Exception{
-		return something;
-	}
+//	public double checkout() throws Exception{
+//		return something;
+//	}
 	
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
 		return true;
