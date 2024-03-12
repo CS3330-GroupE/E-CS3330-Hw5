@@ -3,27 +3,32 @@ package pizzaClasses;
 import java.util.ArrayList;
 import java.util.List;
 
+//PizzaOrder class utilizes PizzaCookingFactory and ICookingStrategy, private methods pizzaFactory, cookingStrategy, and pizzaOrderList
 public class PizzaOrder extends PizzaCookingFactory implements ICookingStrategy {
     private PizzaCookingFactory pizzaFactory;
     private ICookingStrategy cookingStrategy;
     private List<AbstractPizza> pizzaOrderList;
-
+	
+    //PizzaOrder constructor - utilizes PizzaCookingFactory and ICookingStrategy - creates pizza type and cooking form
     public PizzaOrder(PizzaCookingFactory pizzaFactory, ICookingStrategy cookingStrategy) {
         this.pizzaFactory = pizzaFactory;
         this.cookingStrategy = cookingStrategy;
         this.pizzaOrderList = new ArrayList<>();
     }
-
+	
+    //creates pizza object - utilizes PizzaCookingFactory and PizzaType enum
     @Override
     public AbstractPizza createPizza(PizzaType pizzaType) {
         return pizzaFactory.createPizza(pizzaType);
     }
-
+	
+    //returns cookingStrategy to pizza
     @Override
     public boolean cook(AbstractPizza pizza) {
         return cookingStrategy.cook(pizza);
     }
-
+	
+    //adds pizza object to order list
     public void addPizzaOrder(AbstractPizza pizza) {
         pizzaOrderList.add(pizza);
     }
