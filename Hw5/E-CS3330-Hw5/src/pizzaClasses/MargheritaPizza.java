@@ -35,10 +35,5 @@ public class MargheritaPizza extends AbstractPizza {
 				+ ", totalPrice=" + totalPrice + ", pizzaOrderID=" + pizzaOrderID + ", cookingStrategy="
 				+ cookingStrategy + ", cookingPrice=" + cookingPrice + "]";
 	}
-//sets total price by calling the update pizza method which requires the currently known price and returns the newly updated price
-	public double updatePrice() {
-		this.setTotalPrice(this.updatePizzaPrice(this.getTotalPrice()));
-		return this.getTotalPrice();
-	}
 	
 }

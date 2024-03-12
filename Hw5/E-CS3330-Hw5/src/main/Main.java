@@ -12,6 +12,7 @@ public class Main {
 		//instantiate pizza object
 		
 		
+		//This is just to test if the pizza classes work
 		MargheritaPizza myPizzaTester = new MargheritaPizza();
 		
 		//displays marg pizza without toppings cost
@@ -28,13 +29,12 @@ public class Main {
 		 System.out.println(myPizzaTester.getToppingList());  
 		
 		 //displays the current price  
-		 System.out.println("Margherita Pizza Price with toppings: $" + String.format("%.2f", myPizzaTester.getTotalPrice()));
+		
 		 myPizzaTester.getToppingList().add(Toppings.BELL_PEPPER);
 		 System.out.println(myPizzaTester.getToppingList());  
 		 myPizzaTester.updatePrice();
-		 
-		 System.out.println("Margherita Pizza Price with toppings: $" + String.format("%.2f", myPizzaTester.getTotalPrice()));
-		 
-		 System.out.println(myPizzaTester.toString());
+		 	 
+		 System.out.println(myPizzaTester.toString());	 
+		
 	}
 }

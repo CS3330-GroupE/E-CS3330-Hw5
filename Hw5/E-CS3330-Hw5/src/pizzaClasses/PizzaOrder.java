@@ -1,29 +1,69 @@
 package pizzaClasses;
 
-public class PizzaOrder {
+import java.util.ArrayList;
+import java.util.List;
+
+public class PizzaOrder{
+   
+	private PizzaCookingFactory pizzaFactory;
+    private List<AbstractPizza> pizzaOrderList;
+    private ICookingStrategy cookingStrategy ;
+    
+    // Constructor
+    public PizzaOrder() {
+        pizzaFactory = new PizzaCookingFactory();
+        pizzaOrderList = new ArrayList<>();
+    }
+    
+	//method to print off the list of toppings based on given orderID
+    public void printListOfToppingsByPizzaOrderID(int orderID) {
+        
+    	try {
+        	
+    		AbstractPizza pizza = getPizzaByOrderID(orderID);
+            System.out.println("Toppings for order number " + orderID + ": ");           
+            
+            for (Toppings topping : pizza.getToppingList()) {
+                System.out.println(topping);
+            }             
+        } 
+        
+        catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+    
+    // Method to get pizza by order ID
+    public AbstractPizza getPizzaByOrderID(int orderID) {
+    	
+    	for (AbstractPizza pizza : pizzaOrderList) {
+    		
+    		if (pizza.getPizzaOrderID() == orderID) {
+    			return pizza;
+    		}
+    	}
+    	
+    	System.out.println("Sorry. We could not find that order based on the ID provided.");
+		return null;
+    }
+    
+    // Method to print current shopping cart
+    public void printPizzaOrderCart(int orderID) {
+        
+    	System.out.println("Current shopping cart includes:");
+        
+        for (AbstractPizza pizza : pizzaOrderList) {
+            System.out.println(pizza);
+        }
+    }
 	
-	//private void pizzaFactory(PizzaCookingFactory);
 	
-	//private void cookingStrategy(ICookingStrategy);
-	
-//	private void pizzaOrderList(List<AbstractPizza>);
-	
-	public void printListOfToppingsByPizzaOrderID(int orderID){
-		
-	}
-	
-	public void printPizzaOrderCart(int orderID) {
-		
-	}
-	
-//	public AbstractPizza getPizzaByOrderID(int orderID) {
-//		return AbstractPizza;
-//	}
-	
-	public boolean addPizzaToCart(PizzaType pizzaType) {
-		
-		return true;
-	}
+	   // Method create and add pizza to shopping cart
+    public boolean addPizzaToCart(PizzaType pizzaType) {
+        AbstractPizza pizza = pizzaFactory.createPizza(pizzaType);
+            pizzaOrderList.add(pizza);
+            return true;
+        }
 	
 	public boolean addNewToppingToPizza(int orderID, Toppings topping) {
 		
