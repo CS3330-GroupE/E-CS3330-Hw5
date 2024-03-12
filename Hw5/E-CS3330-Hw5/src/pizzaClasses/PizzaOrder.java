@@ -89,7 +89,40 @@ public class PizzaOrder implements ICookingStrategy {
 	
 	public boolean addNewToppingToPizza(int orderID, Toppings topping) {
 		
-		return true;
+		//looks for pizza
+		for(AbstractPizza pizza : pizzaOrderList) {
+			
+			//this finds the order in question
+			if(pizza.getPizzaOrderID() == orderID) {
+				
+				//iterates through current pizza's topping list and checks to see if topping exists
+				for(Toppings check : pizza.getToppingList()) {
+					
+					//if the topping exists, return false
+					if(check == topping) {
+						return false;
+					}
+					
+				}
+				
+				//otherwise, add the topping
+				List<Toppings> temptoppingList = new ArrayList<Toppings>();
+				
+				//gets the current topping list and sets the temp equal to it and adds the topping
+				temptoppingList = pizza.getToppingList();
+				temptoppingList.add(topping);
+			
+				//sets the old topping list equal to the new one
+				pizza.setToppingList(temptoppingList);
+				
+				//updates the price of the pizza
+				pizza.addToppingsToPrice(orderID);
+				
+				return true;
+			}
+		}
+		//if finding the pizza fails, return false
+		return false;
 	}
 	
 	public boolean removeToppingFromPizza(int orderID, Toppings topping) {
