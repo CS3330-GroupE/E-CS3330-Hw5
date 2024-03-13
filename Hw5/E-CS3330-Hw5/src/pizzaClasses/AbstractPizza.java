@@ -32,7 +32,6 @@ public abstract class AbstractPizza {
 		
 		double total = addToppingsToPrice(getPriceWithoutToppings());
 		
-		
 		return total;	
 	}
 	
@@ -97,12 +96,6 @@ public abstract class AbstractPizza {
 
 	public void setCookingPrice(double cookingPrice) {
 		this.cookingPrice = cookingPrice;
-	}
-	
-	//sets total price by calling the update pizza method which requires the currently known price and returns the newly updated price
-		public void updatePrice() {
-			this.setTotalPrice(this.updatePizzaPrice());
-			 System.out.println("Pizza Price with toppings: $" + String.format("%.2f", this.getTotalPrice()));
 	}
 	
 	

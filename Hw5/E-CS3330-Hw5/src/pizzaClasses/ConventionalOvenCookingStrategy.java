@@ -14,13 +14,10 @@ public class ConventionalOvenCookingStrategy implements ICookingStrategy {
 		//pizza.cookingStrategy = ConventionalOvenCookingStrategy;
 		//pizza.totalPrice = pizza.totalPrice + 8.0;
 		
-		if(pizza.getCookingStrategy() == null) {
 			pizza.setCookingPrice(8.0);
 			pizza.setCookingStrategy(this);
-			pizza.setTotalPrice(pizza.getPriceWithoutToppings() + pizza.getCookingPrice());
+			pizza.totalPrice += pizza.getCookingPrice();
 			
 			return true;
 		}
-		return false;
-	}
 }

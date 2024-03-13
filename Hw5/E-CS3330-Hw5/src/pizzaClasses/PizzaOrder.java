@@ -9,15 +9,7 @@ public class PizzaOrder implements ICookingStrategy {
     private ICookingStrategy cookingStrategy;
     private List<AbstractPizza> pizzaOrderList;
 	
-    //PizzaOrder constructor - utilizes PizzaCookingFactory and ICookingStrategy - creates pizza type and cooking form
-    //public PizzaOrder(PizzaCookingFactory pizzaFactory, ICookingStrategy cookingStrategy) {
-        //this.pizzaFactory = pizzaFactory;
-        //this.cookingStrategy = cookingStrategy;
-       // this.pizzaOrderList = new ArrayList<>();
-   // }
-	
-
-
+    
 	//creates pizza object - utilizes PizzaCookingFactory and PizzaType enum
     public AbstractPizza createPizza(PizzaType pizzaType) {
         return pizzaFactory.createPizza(pizzaType);
@@ -31,6 +23,7 @@ public class PizzaOrder implements ICookingStrategy {
     //adds pizza object to order list
     public void addPizzaOrder(AbstractPizza pizza) {
         pizzaOrderList.add(pizza);
+        
     }
     
      //Constructor (Left for comparison)
@@ -70,10 +63,12 @@ public class PizzaOrder implements ICookingStrategy {
     	System.out.println("Sorry. We could not find that order based on the ID provided.");
 		return null;
     }
-    
-    // Method to print current shopping cart
+   
+    //ttl
+    // Method to print current shopping cart   
     public void printPizzaOrderCart(int orderID) {
         
+    	
     	System.out.println("Current shopping cart includes:");
         
         for (AbstractPizza pizza : pizzaOrderList) {
@@ -118,8 +113,8 @@ public class PizzaOrder implements ICookingStrategy {
 				//sets the old topping list equal to the new one
 				pizza.setToppingList(temptoppingList);
 				
-				//updates the price of the pizza
-				pizza.addToppingsToPrice(orderID);
+				double tempTotal = pizza.addToppingsToPrice(pizza.getPriceWithoutToppings());
+                pizza.setTotalPrice(tempTotal + pizza.getCookingPrice());
 				
 				return true;
 			}
@@ -143,6 +138,10 @@ public class PizzaOrder implements ICookingStrategy {
 					if(check.equals(topping)) {
 						toppingList.remove(topping);
 						pizza.setToppingList(toppingList);
+						
+						double tempTotal = pizza.addToppingsToPrice(pizza.getPriceWithoutToppings());
+		                pizza.setTotalPrice(tempTotal + pizza.getCookingPrice());
+		                
 						pizza.updatePizzaPrice();
 						
 						return true; //topping removed successfully

@@ -2,6 +2,7 @@ package main;
 import pizzaClasses.CookingStyleType;
 import pizzaClasses.PizzaOrder;
 import pizzaClasses.PizzaType;
+import pizzaClasses.Toppings;
 
 public class Main {
 	public static void main(String[] args) {
@@ -10,12 +11,14 @@ public class Main {
 		// TODO
 		
 		PizzaOrder myOrder = new PizzaOrder();
-		
-		
+
 		myOrder.addPizzaToCart(PizzaType.MARGHERITA);
-		myOrder.addPizzaToCart(PizzaType.SUPREME);
 		myOrder.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.BRICK_OVEN);
-		myOrder.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.CONVENTIONAL_OVEN);
+		
+		myOrder.addNewToppingToPizza(1, Toppings.BELL_PEPPER);
+		myOrder.printPizzaOrderCart(1);
+		
+		myOrder.removeToppingFromPizza(1, Toppings.BELL_PEPPER);
 		myOrder.printPizzaOrderCart(1);
 		
 		try {

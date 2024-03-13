@@ -13,9 +13,8 @@ public class BrickOvenCookingStrategy implements ICookingStrategy {
 		//pizza.totalPrice = pizza.totalPrice + 10.0;
 			pizza.setCookingPrice(10.0);
 			pizza.setCookingStrategy(this);
-			pizza.setTotalPrice(pizza.getPriceWithoutToppings() + pizza.getCookingPrice());
+			pizza.totalPrice += pizza.getCookingPrice();
 			
 			return true;
-		
 	}
 }
