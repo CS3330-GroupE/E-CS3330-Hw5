@@ -10,13 +10,15 @@ public class PizzaOrder implements ICookingStrategy {
     private List<AbstractPizza> pizzaOrderList;
 	
     //PizzaOrder constructor - utilizes PizzaCookingFactory and ICookingStrategy - creates pizza type and cooking form
-    public PizzaOrder(PizzaCookingFactory pizzaFactory, ICookingStrategy cookingStrategy) {
-        this.pizzaFactory = pizzaFactory;
-        this.cookingStrategy = cookingStrategy;
-        this.pizzaOrderList = new ArrayList<>();
-    }
+    //public PizzaOrder(PizzaCookingFactory pizzaFactory, ICookingStrategy cookingStrategy) {
+        //this.pizzaFactory = pizzaFactory;
+        //this.cookingStrategy = cookingStrategy;
+       // this.pizzaOrderList = new ArrayList<>();
+   // }
 	
-    //creates pizza object - utilizes PizzaCookingFactory and PizzaType enum
+
+
+	//creates pizza object - utilizes PizzaCookingFactory and PizzaType enum
     public AbstractPizza createPizza(PizzaType pizzaType) {
         return pizzaFactory.createPizza(pizzaType);
     }
@@ -31,12 +33,12 @@ public class PizzaOrder implements ICookingStrategy {
         pizzaOrderList.add(pizza);
     }
     
-    /* Constructor (Left for comparison)
+     //Constructor (Left for comparison)
     public PizzaOrder() {
         pizzaFactory = new PizzaCookingFactory();
         pizzaOrderList = new ArrayList<>();
     }
-    */
+    
 	//method to print off the list of toppings based on given orderID
     public void printListOfToppingsByPizzaOrderID(int orderID) {
         
@@ -75,7 +77,7 @@ public class PizzaOrder implements ICookingStrategy {
     	System.out.println("Current shopping cart includes:");
         
         for (AbstractPizza pizza : pizzaOrderList) {
-            System.out.println(pizza);
+            System.out.println(pizza.toString());
         }
     }
 	

@@ -11,15 +11,11 @@ public class BrickOvenCookingStrategy implements ICookingStrategy {
 	public boolean cook(AbstractPizza pizza) {
 		// TODO Auto-generated method stub
 		//pizza.totalPrice = pizza.totalPrice + 10.0;
-		
-		if(pizza.getCookingStrategy() == null) {
 			pizza.setCookingPrice(10.0);
 			pizza.setCookingStrategy(this);
 			pizza.setTotalPrice(pizza.getPriceWithoutToppings() + pizza.getCookingPrice());
 			
 			return true;
-		}
-		return false;
+		
 	}
-
 }

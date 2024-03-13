@@ -1,6 +1,8 @@
 package main;
-
+import pizzaClasses.CookingStyleType;
 import pizzaClasses.MargheritaPizza;
+import pizzaClasses.PizzaOrder;
+import pizzaClasses.PizzaType;
 import pizzaClasses.Toppings;
 
 public class Main {
@@ -9,35 +11,26 @@ public class Main {
 		// Adds pizzas to the cart, selects cooking strategies for the pizzas in the cart,
 		// TODO
 		
-		//instantiate pizza object
+		PizzaOrder myOrder = new PizzaOrder();
 		
 		
-		//This is just to test if the pizza classes work
-		MargheritaPizza myPizzaTester = new MargheritaPizza();
+		myOrder.addPizzaToCart(PizzaType.MARGHERITA);
+		myOrder.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.BRICK_OVEN);
+		myOrder.printPizzaOrderCart(1);
 		
-		//displays marg pizza without toppings cost
-		 System.out.println("Margherita Pizza Price without toppings: $" + String.format("%.2f", myPizzaTester.getPriceWithoutToppings())); 
-		 
-		 //displays the total price with default toppings
-		 System.out.println("Margherita Pizza Price with toppings: $" + String.format("%.2f", myPizzaTester.getTotalPrice())); 
-		 
-		 //adds a new topping to the toppings arraylist
-		 myPizzaTester.getToppingList().add(Toppings.BELL_PEPPER);
-		 myPizzaTester.updatePrice();
-		 
-		 //displays current topping arraylist
-		 System.out.println(myPizzaTester.getToppingList());  
-		
-		 //displays the current price  
-		
-		 myPizzaTester.getToppingList().add(Toppings.BELL_PEPPER);
-		 System.out.println(myPizzaTester.getToppingList());  
-		 myPizzaTester.updatePrice();
-		 	 
-		 System.out.println(myPizzaTester.toString());
-		 
+		try {
+            // Calls checkout to calculate the bill
+            double totalBill = myOrder.checkout();
+            System.out.println("Total Bill: $" + totalBill);
+            
+        } catch (Exception e) {
+            // Throws exception if there is at least one uncooked pizza
+        	
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
 		 
 		 
 		
-	}
+	
 }
