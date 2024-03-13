@@ -4,17 +4,12 @@ public class MicrowaveCookingStrategy implements ICookingStrategy {
 	
 	
 	public MicrowaveCookingStrategy() {
-		// TODO Auto-generated constructor stub
-		//Must implement ICookingStrategy
 	}
 
-
+	/** <p> sets cooking strategy to MicrowaveCookingStrategy to pizza object, sets price to 1.00 and adds to total </p>
+	*/
 	@Override
 	public boolean cook(AbstractPizza pizza) {
-		// TODO Auto-generated method stub
-		//pizza.setCookingStrategy(CookingStyleType.MICROWAVE);
-		//pizza.totalPrice = pizza.totalPrice + 1.00;
-		
 		pizza.setCookingPrice(1.0);
 		pizza.setCookingStrategy(this);
 		pizza.totalPrice += pizza.getCookingPrice();
