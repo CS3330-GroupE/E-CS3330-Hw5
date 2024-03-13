@@ -85,6 +85,7 @@ public class PizzaOrder implements ICookingStrategy {
             return true;
         }
 	
+
 	public boolean addNewToppingToPizza(int orderID, Toppings topping) {
 		
 		//looks for pizza
@@ -123,6 +124,14 @@ public class PizzaOrder implements ICookingStrategy {
 		return false;
 	}
 	
+	
+	/**
+	 * @author blake simpson
+	 * @param orderID
+	 * @param topping
+	 * @return true on successful removal of topping
+	 * @return false on failure to remove topping
+	 */
 	public boolean removeToppingFromPizza(int orderID, Toppings topping) {
 		
 		//looking for pizza
@@ -155,8 +164,12 @@ public class PizzaOrder implements ICookingStrategy {
 		return false; //order not found
 	}
 	
-	//returns true if it finds an uncooked pizza
-	//returns false if there is no uncooked pizza
+	
+	/**
+	 * @author blake simpson
+	 * @return true if pizza is uncooked
+	 * @return false if pizza is coooked
+	 */
 	public boolean isThereAnyUncookedPizza() {
 		
 		for(AbstractPizza pizza : pizzaOrderList) {
@@ -188,7 +201,13 @@ public class PizzaOrder implements ICookingStrategy {
 		return total;
 	}
 	
-	//
+	/**
+	 * @author blake simpson
+	 * @param orderID
+	 * @param cookingStrategyType
+	 * @return true on successful selection
+	 * @return false on failure to select pizza
+	 */
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
 		
 		//searching through list to find pizza by orderID
