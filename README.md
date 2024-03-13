@@ -19,3 +19,5 @@ Contributions:
 Ethan Alexander: Setup some of the sub classes for abstract pizza, setup pizza factory, and setup the method addNewToppingToPizza. Also made a couple changes to the Enum class PizzaType and made some changes to iCookingStrategy subclasses.
 
 Blake Simpson: Worked on addNewTopping, removeTopping, checkout, selectCookingStrategy,the ICookingStrategy subclasses, and testing.
+
+Jonathan Hatfield: Worked on AbstractPizza attributes, enums with constructor and getter methods, Added attributes to pizza order and constructors, Added printListOfToppingsByPizzaOrderID method, Added getPIzzaByOrderID method, Added addPizzaToCart method, Added printPizzaOrderCart method, Added an orderIDcounter to the PizzaCookingFactory class, finished the marg pizza class, and worked on add and remove toppings method 
