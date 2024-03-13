@@ -168,9 +168,23 @@ public class PizzaOrder implements ICookingStrategy {
 		return false; //no uncooked pizza found
 	}
 	
-//	public double checkout() throws Exception{
-//		return something;
-//	}
+	//throws general exception if there is any uncooked pizza's -> isThereAnyUncookedPizza() method
+	//searches through pizza list and adds up total price of all pizzas
+	//returns total as double
+	public double checkout() throws Exception {
+		
+		if(isThereAnyUncookedPizza()) {
+			throw new Exception("There is still uncooked pizza(s) in the order");
+		}
+		
+		double total = 0.0;
+		
+		for(AbstractPizza pizza : pizzaOrderList) {
+			total += pizza.getTotalPrice();
+		}
+		
+		return total;
+	}
 	
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
 		
