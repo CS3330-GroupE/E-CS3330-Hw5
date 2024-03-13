@@ -173,6 +173,38 @@ public class PizzaOrder implements ICookingStrategy {
 //	}
 	
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
-		return true;
+		
+		//searching through list to find pizza by orderID
+		for(AbstractPizza pizza : pizzaOrderList) {
+			if(pizza.getPizzaOrderID() == orderID) {
+				
+				ICookingStrategy cookingStrat = null;
+				
+				//instantiating cookingStrat based on cookingStrategyType
+				switch(cookingStrategyType) {
+				case MICROWAVE:
+					cookingStrat = new MicrowaveCookingStrategy();
+					break;
+					
+				case CONVENTIONAL_OVEN:
+					cookingStrat = new ConventionalOvenCookingStrategy();
+					break;
+					
+				case BRICK_OVEN:
+					cookingStrat = new BrickOvenCookingStrategy();
+					break;
+					
+				default:
+					System.out.println("Error: invalid cooking style");
+					return false;
+				}
+				
+				pizza.setCookingStrategy(cookingStrat);
+				//pizza.cook(orderID) ???
+				
+				return true;
+			}
+		}
+		return false;
 	}
 }
