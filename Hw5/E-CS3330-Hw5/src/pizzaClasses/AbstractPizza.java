@@ -4,7 +4,8 @@ import java.util.List;
 
 public abstract class AbstractPizza {
 
-	//attributes
+	/** attributes
+	*/
 	protected List<Toppings> toppingList;
 	protected double priceWithoutToppings;
 	protected double totalPrice;
@@ -13,8 +14,12 @@ public abstract class AbstractPizza {
 	protected ICookingStrategy cookingStrategy;
 	protected double cookingPrice;
 	
-	// calculates the total price of the pizza using
-	//priceWithoutToppings and the prices of each topping in the toppingsList.
+	/** <p> calculates the total price of the pizza using;
+	@param priceWithoutToppings = baseline price
+ 	and the prices of each topping in the toppingsList.
+  	</p>
+  	@return returns total price
+	*/
 	protected double addToppingsToPrice(double priceWithoutToppings) {
 	
 		double total = priceWithoutToppings;
@@ -25,9 +30,10 @@ public abstract class AbstractPizza {
 		return total;
 	}
 	
-	// calculates and updates the totalPrice of the pizza using 
-	//priceWithoutToppings attribute and the prices of each
-	//topping in the toppingsList
+	/** <p> calculates and updates the totalPrice of the pizza using 
+	@param priceWithoutToppings = baseline price
+ 	and the prices of each topping in the toppingsList </p>
+	*/
 	public double updatePizzaPrice() {
 		
 		double total = addToppingsToPrice(getPriceWithoutToppings());
@@ -35,12 +41,14 @@ public abstract class AbstractPizza {
 		return total;	
 	}
 	
-	//constructor
+	/** constructor
+	*/
 	public AbstractPizza() {
 		toppingList = new ArrayList<>();
 	}
 	
-	//getters
+	/** getters
+	*/
 	public List<Toppings> getToppingList() {
 		return toppingList;
 	}
@@ -69,7 +77,8 @@ public abstract class AbstractPizza {
 		return cookingPrice;
 	}
 	
-	//setters
+	/** setters
+	*/
 	public void setToppingList(List<Toppings> toppingList) {
 		this.toppingList = toppingList;
 	}
