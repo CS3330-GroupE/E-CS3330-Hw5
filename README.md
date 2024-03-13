@@ -13,3 +13,7 @@ Methods:
 - isThereAnyUncookedPizza()
 - checkout()
 - selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType)
+
+Contributions:
+
+Ethan Alexander: Setup some of the sub classes for abstract pizza, setup pizza factory, and setup the method addNewToppingToPizza. Also made a couple changes to the Enum class PizzaType and made some changes to iCookingStrategy subclasses.
