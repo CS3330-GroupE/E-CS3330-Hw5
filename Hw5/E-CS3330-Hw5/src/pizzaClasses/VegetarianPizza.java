@@ -2,6 +2,8 @@ package pizzaClasses;
 
 public class VegetarianPizza extends AbstractPizza {
 
+	/** <p> sets type of pizza, comes with specific toppings, alters pizza price </p>
+	*/
 	//Constructor
 	public VegetarianPizza() {
 		super();	
@@ -26,7 +28,8 @@ public class VegetarianPizza extends AbstractPizza {
 	this.totalPrice = pizza.getTotalPrice();
 	}
 	
-	//toString method
+	/** <p> toString method sets pizza type information to a string, information on toppings and price </p>
+	*/
 	@Override
 	public String toString() {
 		return "VegetarianPizza [getToppingList()=" + getToppingList() + ", getPriceWithoutToppings()="
