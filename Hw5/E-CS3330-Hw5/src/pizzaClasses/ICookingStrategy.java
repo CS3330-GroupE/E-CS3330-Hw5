@@ -2,6 +2,6 @@ package pizzaClasses;
 
 public interface ICookingStrategy {
 
-	boolean cook(AbstractPizza pizza); 
+	boolean cook(AbstractPizza pizza);
 		
 }

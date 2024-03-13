@@ -186,6 +186,7 @@ public class PizzaOrder implements ICookingStrategy {
 		return total;
 	}
 	
+	//
 	public boolean selectCookingStrategyByPizzaOrderID(int orderID, CookingStyleType cookingStrategyType) {
 		
 		//searching through list to find pizza by orderID
@@ -214,7 +215,7 @@ public class PizzaOrder implements ICookingStrategy {
 				}
 				
 				pizza.setCookingStrategy(cookingStrat);
-				//pizza.cook(orderID) ???
+				cookingStrat.cook(pizza);
 				
 				return true;
 			}
