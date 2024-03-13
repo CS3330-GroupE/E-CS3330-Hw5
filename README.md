@@ -21,3 +21,5 @@ Ethan Alexander: Setup some of the sub classes for abstract pizza, setup pizza f
 Blake Simpson: Worked on addNewTopping, removeTopping, checkout, selectCookingStrategy,the ICookingStrategy subclasses, and testing.
 
 Jonathan Hatfield: Worked on AbstractPizza attributes, enums with constructor and getter methods, Added attributes to pizza order and constructors, Added printListOfToppingsByPizzaOrderID method, Added getPIzzaByOrderID method, Added addPizzaToCart method, Added printPizzaOrderCart method, Added an orderIDcounter to the PizzaCookingFactory class, finished the marg pizza class, and worked on add and remove toppings method 
+
+Brian Bluhm: Repository creation, creation of all files and baseline classes, PizzaOrder class and PizzaOrder implementation of PizzaCookingFactory, ICookingStrategy and pizzaOrderList
