@@ -1,9 +1,7 @@
 package main;
 import pizzaClasses.CookingStyleType;
-import pizzaClasses.MargheritaPizza;
 import pizzaClasses.PizzaOrder;
 import pizzaClasses.PizzaType;
-import pizzaClasses.Toppings;
 
 public class Main {
 	public static void main(String[] args) {
@@ -15,7 +13,9 @@ public class Main {
 		
 		
 		myOrder.addPizzaToCart(PizzaType.MARGHERITA);
+		myOrder.addPizzaToCart(PizzaType.SUPREME);
 		myOrder.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.BRICK_OVEN);
+		myOrder.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.CONVENTIONAL_OVEN);
 		myOrder.printPizzaOrderCart(1);
 		
 		try {

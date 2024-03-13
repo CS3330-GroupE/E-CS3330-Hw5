@@ -18,20 +18,20 @@ public abstract class AbstractPizza {
 	protected double addToppingsToPrice(double priceWithoutToppings) {
 	
 		double total = priceWithoutToppings;
-		
 		for(Toppings topping : toppingList) {
 			total += topping.getToppingCost();
 		}
-		
+
 		return total;
 	}
 	
 	// calculates and updates the totalPrice of the pizza using 
 	//priceWithoutToppings attribute and the prices of each
 	//topping in the toppingsList
-	public double updatePizzaPrice(double currentPrice) {
+	public double updatePizzaPrice() {
 		
-		double total = addToppingsToPrice(priceWithoutToppings);
+		double total = addToppingsToPrice(getPriceWithoutToppings());
+		
 		
 		return total;	
 	}
@@ -101,9 +101,9 @@ public abstract class AbstractPizza {
 	
 	//sets total price by calling the update pizza method which requires the currently known price and returns the newly updated price
 		public void updatePrice() {
-			this.setTotalPrice(this.updatePizzaPrice(this.getTotalPrice()));
+			this.setTotalPrice(this.updatePizzaPrice());
 			 System.out.println("Pizza Price with toppings: $" + String.format("%.2f", this.getTotalPrice()));
-		}
+	}
 	
 	
 }

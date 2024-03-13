@@ -85,6 +85,7 @@ public class PizzaOrder implements ICookingStrategy {
 	   // Method create and add pizza to shopping cart
     public boolean addPizzaToCart(PizzaType pizzaType) {
         AbstractPizza pizza = pizzaFactory.createPizza(pizzaType);
+        	
             pizzaOrderList.add(pizza);
             return true;
         }
@@ -142,7 +143,7 @@ public class PizzaOrder implements ICookingStrategy {
 					if(check.equals(topping)) {
 						toppingList.remove(topping);
 						pizza.setToppingList(toppingList);
-						pizza.updatePizzaPrice(pizza.totalPrice);
+						pizza.updatePizzaPrice();
 						
 						return true; //topping removed successfully
 					}
